@@ -34,46 +34,35 @@ app.get('/', async function(req, res) {
         });
 
         // Render the homepage with all the blog posts
-        await res.render('pages/home', { blogs: blogs });
+        await res.render('./About Me.html', { blogs: blogs });
       } catch (error) {
-        res.render('pages/home');
+        res.render('./About Me.html');
         console.log(error);
       } 
 });
 
 // About page
-// no database call here, only requesting for about page 
-app.get('/about', function(req, res) {
-    res.render('pages/about');
-});
-
-// Retrieving Demo Page
-app.get('/demo', async function(req, res) {
-  var blog_posts = await prisma.post.findMany();
-
-  console.log(blog_posts);
-
-  await res.render('pages/demo', { blog_posts: blog_posts });
-
+app.get('./About Me.html', function(req, res) {
+    res.render('./About Me.html');
 });
 
 // New post page
-app.get('/new', function(req, res) {
-    res.render('pages/new');
+app.get('./About Me.html', function(req, res) {
+    res.render('./About Me.html');
 });
 
-// Create a new post (post request)
-app.post('/new', async function(req, res) {
+// Create a new post
+app.post('/newchallenge', async function(req, res) {
     
     // Try-Catch for any errors
     try {
         // Get the title and content from submitted form
-        const { title, content } = req.body;
+        const { title, description} = req.body;
 
         // Reload page if empty title or content
-        if (!title || !content) {
-            console.log("Unable to create new post, no title or content");
-            res.render('pages/new');
+        if (!title || !description) {
+            console.log("Unable to create new challenge");
+            res.render('./Challenges.html');
         } else {
             // Create post and store in database
             const blog = await prisma.post.create({
@@ -81,11 +70,11 @@ app.post('/new', async function(req, res) {
             });
 
             // Redirect back to the homepage
-            res.redirect('/');
+            res.redirect('/Challenges');
         }
       } catch (error) {
         console.log(error);
-        res.render('pages/new');
+        res.render('./Challenges.html');
       }
 
 });
@@ -108,4 +97,4 @@ app.post("/delete/:id", async (req, res) => {
   });
 
 // Tells the app which port to run on
-app.listen(8080);
+app.listen(5500);
