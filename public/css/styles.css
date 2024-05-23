@@ -61,8 +61,10 @@ li a {
 
 /*Changing Who is this for font color*/
 .target-audience h2{
-  color:#284B63;
-  margin:30px;
+  color: #284B63;
+  text-align:justify;
+  margin:10px;
+  padding-inline:20px;
 }
 
 /*making my website responsive to different screen size*/
