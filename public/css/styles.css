@@ -22,10 +22,6 @@ nav ul {
   text-align: center; /* center the list of items */
 }
 
-.nav a {
-  background-color:black;
-}
-
 /* style for list items inside navbar */
 li {
   float: left;
