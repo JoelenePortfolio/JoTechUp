@@ -42,26 +42,31 @@
         <section id="challenges">
             <h2>Ongoing Challenges</h2>
             <ul id="challenge-list"></ul>
-            <script>
-                document.addEventListener('DOMContentLoaded',function(){
-                    const form = document.getElementById('challenge-form');
-                    const challengeList = document.getElementById('challenge-list');
 
-                    form.addEventListener('submit',function(event) {
-                        event.preventDefault();
-
-                        const challengeInput = document.getElementById('challenge');
-                        const challengeText = challengeInput.value;
-                        if(challengeText.trim() !==''){
-                            const challengeItem = document.createElement('li');
-                            challengeItem.textContent = challengeText;
-                            challengeList.appendChild(challengeItem);
-                            challengeInput.value='';
-                        }
-                    });
-                });
-            </script>
         </section>
+
+    <!-- For new challenges to be reflected -->
+        <script>
+            document.addEventListener('DOMContentLoaded',function(){
+                const form = document.getElementById('challenge-form');
+                const challengeList = document.getElementById('challenge-list');
+        
+                form.addEventListener('submit',function(event) {
+                    event.preventDefault();
+        
+                    const challengeInputTitle = document.getElementById('challenge-title');
+                    const challengeInputDesc = document.getElementById('challenge-description');
+                    const challengeText = challengeInputTitle.value;
+                    if(challengeText.trim() !==''){
+                        const challengeItem = document.createElement('li')
+                        challengeItem.classList.add('challenge-item')
+                        challengeItem.textContent = challengeText;
+                        challengeList.appendChild(challengeItem);
+                        challengeInputTitle.value='';
+                    }
+                });
+            });
+        </script>
 
  <!-- The Disclaimer part of WealthUp -->
  <footer><p>
