@@ -1,9 +1,50 @@
-<form id="challenge-form">
-    <label for="challenge-title">Challenge Title:</label>
-    <input type="text" id="challenge-title">
-
-    <label for="challenge-description">Challenge Description:</label>
-    <textarea id="challenge-description" name="challenge-description" rows="7"></textarea>
-
-    <button type="submit">Create Challenge</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenges</title>
+    <style>
+        #challenge-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .challenge-item {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Challenges</h1>
+    <form id="challenge-form">
+        <label for="challenge">Enter Challenge:</label>
+        <input type="text" id="challenge" required>
+        <button type="submit">Add Challenge</button>
     </form>
+    <ul id="challenge-list"></ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('challenge-form');
+            const challengeList = document.getElementById('challenge-list');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const challengeInput = document.getElementById('challenge');
+                const challengeText = challengeInput.value;
+
+                if (challengeText.trim() !== '') {
+                    const challengeItem = document.createElement('li');
+                    challengeItem.classList.add('challenge-item');
+                    challengeItem.textContent = challengeText;
+                    challengeList.appendChild(challengeItem);
+                    challengeInput.value = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
