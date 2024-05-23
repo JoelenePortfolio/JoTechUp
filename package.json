@@ -1,18 +1,21 @@
 {
-  "name": "techup-sample-blog",
+  "name": "wealthup",
   "version": "1.0.0",
-  "description": "Sample Blog webapp for TechUp",
-  "main": "index.js",
+  "description": "WealthUp webapp for TechUp",
+  "main": "wealthup.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "prisma generate",
+    "dev": "next dev",
+    "build": "next build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "^5.11.0",
+    "@prisma/client": "^5.14.0",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
-    "express": "^4.19.1"
+    "express": "^4.19.1",
+    "prisma": "^5.14.0"
   }
 }
