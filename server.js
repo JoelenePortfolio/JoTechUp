@@ -16,8 +16,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 // Needed for Prisma to connect to database
-const { PrismaClient } = require('@prisma/client')
-const prisma = new PrismaClient();
+//const { PrismaClient } = require('@prisma/client')
+//const prisma = new PrismaClient();
 
 // Main landing page
 app.get('/', async function(req, res) {
@@ -25,16 +25,16 @@ app.get('/', async function(req, res) {
     // Try-Catch for any errors
     try {
         // Get all blog posts
-        const blogs = await prisma.post.findMany({
-                orderBy: [
-                  {
-                    id: 'desc'
-                  }
-                ]
-        });
+        // const blogs = await prisma.post.findMany({
+        //         orderBy: [
+        //           {
+        //             id: 'desc'
+        //           }
+        //         ]
+        // });
 
         // Render the homepage with all the blog posts
-        await res.render('./About Me.html', { blogs: blogs });
+        await res.render('./About Me.html', ); //{ blogs: blogs }
       } catch (error) {
         res.render('./About Me.html');
         console.log(error);
@@ -64,10 +64,10 @@ app.post('/newchallenge', async function(req, res) {
             console.log("Unable to create new challenge");
             res.render('./Challenges.html');
         } else {
-            // Create post and store in database
-            const blog = await prisma.post.create({
-                data: { title, content },
-            });
+            // // Create post and store in database
+            // const blog = await prisma.post.create({
+            //     data: { title, content },
+            // });
 
             // Redirect back to the homepage
             res.redirect('/Challenges');
@@ -84,9 +84,9 @@ app.post("/delete/:id", async (req, res) => {
     const { id } = req.params;
     
     try {
-        await prisma.post.delete({
-            where: { id: parseInt(id) },
-        });
+        // await prisma.post.delete({
+        //     where: { id: parseInt(id) },
+        // });
       
         // Redirect back to the homepage
         res.redirect('/');
