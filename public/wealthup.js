@@ -35,31 +35,3 @@ function incrementThumbsup(button) {
         '.thumbsupcount');
     const currentCount = parseInt (thumbsUpCountSpan.textContent); thumbsUpCountSpan.textContent = currentCount + 1;
 }
-
-//To get homepage
-
-// About pages
-app.get('/about', function(req, res) {
-    res.render('./About Me.html');
-});
-
-// New post page
-app.get('/new', function(req, res) {
-    res.render('pages/new');
-});
-
-// Needed for dotenv
-require("dotenv").config();
-
-// Needed for Express
-var express = require('express')
-var app = express()
-
-// Needed for EJS
-app.set('view engine', 'ejs');
-
-// Needed for public directory
-app.use(express.static(__dirname + '/public'));
-
-  // Tells the app which port to run on
-app.listen(5500);

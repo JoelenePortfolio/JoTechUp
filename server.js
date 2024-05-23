@@ -6,7 +6,8 @@ var express = require('express')
 var app = express()
 
 // Needed for EJS
-app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile)
+app.set('view engine', 'html');
 
 // Needed for public directory
 app.use(express.static(__dirname + '/public'));
@@ -34,21 +35,26 @@ app.get('/', async function(req, res) {
         // });
 
         // Render the homepage with all the blog posts
-        await res.render('./About Me.html', ); //{ blogs: blogs }
+        await res.render('./pages/About Me.html', ); //{ blogs: blogs }
       } catch (error) {
-        res.render('./About Me.html');
+        res.render('./pages/About Me.html');
         console.log(error);
       } 
 });
 
-// About page
-app.get('./About Me.html', function(req, res) {
-    res.render('./About Me.html');
+// Challenges page
+app.get('/challenges', function(req, res) {
+    res.render('./pages/Challenges.html');
 });
 
-// New post page
-app.get('./About Me.html', function(req, res) {
-    res.render('./About Me.html');
+// Home page
+app.get('/Index', function(req, res) {
+    res.render('./pages/Index.html');
+});
+
+// WealthUp page
+app.get('/WealthUp', function(req, res) {
+  res.render('./pages/WealthUp.html');
 });
 
 // Create a new post
