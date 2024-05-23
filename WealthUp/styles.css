@@ -1,0 +1,74 @@
+/* Adding color and box to navigation bar */
+nav {
+  background-color: #284B63; /* Background color of the navbar */
+  overflow: hidden; 
+} 
+
+/* Style for the navigation links */
+.nav a {
+  float: none; /* Float the links to the left */
+  display: inline-block; /* Make links behave as block elements */
+  color: white; /* Text color of the links */
+  text-align: center; /* Center-align text within the links */
+  padding: 10px 10px; /* Padding for the links (top and bottom, left and right) */
+  text-decoration: none; /* Remove underline from links */
+}
+
+nav ul {
+  list-style-type: none; /*remove bullets */
+  padding:0px; /* remove default padding */
+  margin:0px; /* removedefault margin */
+  overflow: hidden;
+  text-align: center; /* center the list of items */
+}
+
+.nav a {
+  background-color:black;
+}
+
+/* style for list items inside navbar */
+li {
+  float: left;
+  display: inline; 
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: center;
+  padding: 14px 16px
+}
+
+/*Header WealthUp*/
+.header{
+  color:#284B63;
+  text-align:left;
+  margin:30px;
+}
+
+/* Introduction will be in dark blue font */
+.introduction {
+    color: #284B63;
+    text-align:justify;
+    margin:10px;
+    padding-inline:20px;
+  }
+
+/*Targets all paragraphs in Section Introduction*/
+.introduction p{
+  display: block;
+  margin-bottom:20px;
+  margin-top:20px;
+  line-height:1.6;
+}
+
+/*Changing Who is this for font color*/
+.target-audience h2{
+  color:#284B63;
+  margin:30px;
+}
+
+/*making my website responsive to different screen size*/
+@media (max-width:480px){
+}

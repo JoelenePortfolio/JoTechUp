@@ -42,8 +42,19 @@ app.get('/', async function(req, res) {
 });
 
 // About page
+// no database call here, only requesting for about page 
 app.get('/about', function(req, res) {
     res.render('pages/about');
+});
+
+// Retrieving Demo Page
+app.get('/demo', async function(req, res) {
+  var blog_posts = await prisma.post.findMany();
+
+  console.log(blog_posts);
+
+  await res.render('pages/demo', { blog_posts: blog_posts });
+
 });
 
 // New post page
@@ -51,7 +62,7 @@ app.get('/new', function(req, res) {
     res.render('pages/new');
 });
 
-// Create a new post
+// Create a new post (post request)
 app.post('/new', async function(req, res) {
     
     // Try-Catch for any errors
