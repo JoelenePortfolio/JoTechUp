@@ -65,7 +65,7 @@
                     if((challengeTitle.trim() !=='') && (challengeDesc.trim()!== '')){
                         const challengeItem = document.createElement('li')
                         challengeItem.classList.add('challenge-item')
-                        challengeItem.textContent = `&{challengeTitle}: ${challengeDesc}`; //combine title and descriptn
+                        challengeItem.textContent = ${challengeTitle}`: ${challengeDesc}`; //combine title and descriptn
                         
                         //Append new challenge item to the challenge list
                         challengeList.appendChild(challengeItem);
