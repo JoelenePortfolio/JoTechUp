@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Challenges</title>
     <!--Links to respective CSS and Javascript-->
-    <link rel="stylesheet" href="public/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="wealthup.js"></script>
     <script src="server.js"></script>
     
@@ -30,12 +30,16 @@
         <h2>Create a Challenge</h2>
         <form id="challenge-form">
         <label for="challenge-title">Challenge Title:</label>
+
+        <div class="input-group">
         <input type="text" id="challenge-title" name="challenge-title" required>
 
         <label for="challenge-description">Challenge Description:</label>
-        <textarea id="challenge-description" name="challenge-description" rows="4" required></textarea>
-
+        <textarea type="challenge-description" name="challenge-description" rows="4" required></textarea>
+        </div>  
+       
         <button type="submit">Create Challenge 🚀</button>
+
         </form>
         </section>
 
@@ -65,7 +69,7 @@
                     if((challengeTitle.trim() !=='') && (challengeDesc.trim()!== '')){
                         const challengeItem = document.createElement('li')
                         challengeItem.classList.add('challenge-item')
-                        challengeItem.textContent = ${challengeTitle}`: ${challengeDesc}`; //combine title and descriptn
+                        challengeItem.textContent = $;challengeTitle`: ${challengeDesc}`; //combine title and descriptn
                         
                         //Append new challenge item to the challenge list
                         challengeList.appendChild(challengeItem);

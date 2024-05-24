@@ -81,3 +81,24 @@ li a {
 .footer {
   float:right;
 }
+
+/*Styles for the challenge form inputs*/
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/*Styles of Challenge title*/
+.challenge-Title{
+  display: flex;
+  gap: 10px;
+  margin-bottom:10px;
+}
+
+/*Styles of Challenge Description*/
+.challenge-description{
+  display: flex;
+  gap: 10px;
+  margin-bottom:10px;
+}
