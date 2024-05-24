@@ -51,13 +51,16 @@
                 const form = document.getElementById('challenge-form');
                 const challengeList = document.getElementById('challenge-list');
         
-                form.addEventListener('submit',function(event) {
+                form.addEventListener('form',function(event) {
                     event.preventDefault();
         
                     const challengeInputTitle = document.getElementById('challenge-title');
                     const challengeInputDesc = document.getElementById('challenge-description');
-                    const challengeText = challengeInputTitle.value;
-                    if(challengeText.trim() !==''){
+                    const challengeTitle = challengeInputTitle.value;
+                    const challengeDesc = challengeInputDesc.value;
+
+                    //Create new challenge item
+                    if(challengeText.trim() !=='') && challengeDesc.trim()!== ''){
                         const challengeItem = document.createElement('li')
                         challengeItem.classList.add('challenge-item')
                         challengeItem.textContent = challengeText;
