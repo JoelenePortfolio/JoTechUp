@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const challengeList = document.getElementById('challenge-list');
     
     //To handle form submission
-    form.addEventListener('click', function(event) {
+    form.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent form from submitting the traditional way
 
     // Get form input values
