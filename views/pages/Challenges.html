@@ -50,25 +50,34 @@
             document.addEventListener('DOMContentLoaded',function(){
                 const form = document.getElementById('challenge-form');
                 const challengeList = document.getElementById('challenge-list');
-        
-                form.addEventListener('form',function(event) {
+                
+                //Add an event listener for form submission
+                form.addEventListener('submit',function(event) {
                     event.preventDefault();
-        
+                    
+                    //Obtain Input values from user
                     const challengeInputTitle = document.getElementById('challenge-title');
                     const challengeInputDesc = document.getElementById('challenge-description');
                     const challengeTitle = challengeInputTitle.value;
                     const challengeDesc = challengeInputDesc.value;
 
                     //Create new challenge item
-                    if(challengeText.trim() !=='') && challengeDesc.trim()!== ''){
+                    if((challengeTitle.trim() !=='') && (challengeDesc.trim()!== '')){
                         const challengeItem = document.createElement('li')
                         challengeItem.classList.add('challenge-item')
-                        challengeItem.textContent = challengeText;
+                        challengeItem.textContent = `&{challengeTitle}: ${challengeDesc}`; //combine title and descriptn
+                        
+                        //Append new challenge item to the challenge list
                         challengeList.appendChild(challengeItem);
+
+                        //Clear form inputs
                         challengeInputTitle.value='';
-                    }
-                });
+                        challengeInputDesc.value='';
+                    } else {
+                        console.log("Both fields are required");
+                };
             });
+        });
         </script>
 
  <!-- The Disclaimer part of WealthUp -->
