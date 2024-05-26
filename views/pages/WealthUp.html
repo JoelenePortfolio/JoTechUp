@@ -6,7 +6,7 @@
     <title>WealthUp</title>
     
     <!-- Linking CSS file to my html-->
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <!-- Linking Javscript file to my html-->
     <script src="wealthup.js" defer></script>
 
@@ -21,6 +21,23 @@
         <li><a href="/challenges">Challenges</a></li>
       </ul>
     </nav>
+
+    <!--Buttons-->
+    <div class="button-container">
+      <button onclick="showLayer('layer1')">Show Layer 1</button>
+      <button onclick="showLayer('layer2')">Show Layer 2</button>
+  </div>
+  <div class="layer-container">
+      <div id="layer1" class="layer">
+          <h2>Layer 1</h2>
+          <p>This is the content of Layer 1.</p>
+      </div>
+      <div id="layer2" class="layer hidden">
+          <h2>Layer 2</h2>
+          <p>This is the content of Layer 2.</p>
+      </div>
+  </div>
+  <script src="WealthUp.js"></script>
 
    <!-- The Disclaimer part of WealthUp -->
    <footer><p>
