@@ -102,23 +102,3 @@ li a {
   gap: 10px;
   margin-bottom:10px;
 }
-
-.button-container {
-  margin-bottom: 20px;
-}
-.button-container button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-.layer-container {
-  width: 80%;
-  max-width: 600px;
-}
-.layer {
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  margin-bottom: 10px;
-}
