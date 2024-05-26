@@ -35,3 +35,15 @@ function incrementThumbsup(button) {
         '.thumbsupcount');
     const currentCount = parseInt (thumbsUpCountSpan.textContent); thumbsUpCountSpan.textContent = currentCount + 1;
 }
+
+//For different layers in WealthUp
+function showLayer(layerId) {
+    const layers = document.querySelectorAll('.layer');
+    layers.forEach(layer => {
+        if (layer.id === layerId) {
+            layer.classList.remove('hidden');
+        } else {
+            layer.classList.add('hidden');
+        }
+    });
+}
