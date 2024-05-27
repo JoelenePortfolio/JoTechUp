@@ -8,10 +8,17 @@
     <link rel="stylesheet" href="/css/styles.css">
     <script src="wealthup.js"></script>
     <script src="server.js"></script>
-    
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P6PBRY85Q6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P6PBRY85Q6');
+</script>
 </head>
 
-<!--When the page load, the user will receive a welcome pop-up message -->
 <body>
     
     <!-- Navigation Bar-->
@@ -51,11 +58,13 @@
 
     <!-- For new challenges to be reflected -->
         <script>
+            //Wait until document loaded using 'DOMContentLoaded'
             document.addEventListener('DOMContentLoaded',function(){
+                //We get our challenge list and form by using 'getElementbyId'
                 const form = document.getElementById('challenge-form');
                 const challengeList = document.getElementById('challenge-list');
                 
-                //Add an event listener for form submission
+                //Add an event listener whre submitting a form triggers an event.
                 form.addEventListener('submit',function(event) {
                     event.preventDefault();
                     
@@ -78,6 +87,7 @@
                         challengeInputTitle.value='';
                         challengeInputDesc.value='';
                     } else {
+                        //print output to browser's console
                         console.log("Both fields are required");
                 };
             });
@@ -97,6 +107,7 @@
             const challengeText = challengeInput.value;
 
             if (challengeText.trim() !== '') {
+                //check if the box is not empty > creates a new listed elements with class challenge-item.
                 const challengeItem = document.createElement('li');
                 challengeItem.classList.add('challenge-item');
                 challengeItem.textContent = challengeText;
